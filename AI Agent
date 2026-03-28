@@ -6906,7 +6906,7 @@
         },
         "outputId": "c9b9f95c-6582-4860-be80-9f8d1c07a8b3"
       },
-      "execution_count": 50,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -6990,7 +6990,7 @@
         "id": "coxy42Hjp3Rh",
         "outputId": "798aaae7-446f-4121-eb1e-8c98bf17bbe6"
       },
-      "execution_count": 53,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -7037,7 +7037,7 @@
         "id": "6GJjHJ80pdsG",
         "outputId": "ba2c8d6d-ed62-4b74-d1ac-6812ecfe7fb1"
       },
-      "execution_count": 54,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -7138,7 +7138,7 @@
         "id": "lZ9mI7Kppi2v",
         "outputId": "08732e7e-e02e-4b72-bf58-6dabc3a7fc17"
       },
-      "execution_count": 55,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -7173,7 +7173,7 @@
         "id": "gBUkPry_qCgd",
         "outputId": "09b60b19-f4dc-470c-fa21-dff61af5141f"
       },
-      "execution_count": 56,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -7261,7 +7261,7 @@
         "id": "4BZ7XZzWqFL-",
         "outputId": "fe05aacf-5b25-48e9-e225-3414ac0ab9e5"
       },
-      "execution_count": 57,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -7344,7 +7344,7 @@
         "id": "tQHKIP2SqcaB",
         "outputId": "0ce01578-63c2-47b1-a018-7182ddca4729"
       },
-      "execution_count": 58,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -7575,7 +7575,7 @@
         "id": "OUoKdkg_qgaW",
         "outputId": "112ac9a2-9542-4b5a-f3a5-e87b1e07ab65"
       },
-      "execution_count": 59,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -7663,7 +7663,7 @@
         "id": "-DA8N99jr_WE",
         "outputId": "b0d541ed-1c89-4e73-fb9c-7db0a07a0357"
       },
-      "execution_count": 62,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "display_data",
@@ -7725,7 +7725,7 @@
         "id": "h60ZmsztvGn_",
         "outputId": "228656df-7149-4072-846b-1a47fdf05383"
       },
-      "execution_count": 63,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -8302,7 +8302,7 @@
         "id": "B3Hn6LHkv5ed",
         "outputId": "7f7ffd92-2e3f-424b-c302-53938894cd33"
       },
-      "execution_count": 64,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -8365,7 +8365,7 @@
         "id": "otVfFcXAv86w",
         "outputId": "2586958b-c6e4-493c-b03a-5f371cdf5ee6"
       },
-      "execution_count": 65,
+      "execution_count": null,
       "outputs": [
         {
           "output_type": "stream",
@@ -8393,9 +8393,1103 @@
     },
     {
       "cell_type": "code",
+      "source": [
+        "!pip install requests python-frontmatter minsearch sentence-transformers \\\n",
+        "             pydantic-ai groq streamlit -q"
+      ],
+      "metadata": {
+        "id": "gsuu2ixCwZ9x",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "a02b7540-7b44-4a27-fe5b-32c4790a2760"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[2K     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m49.3/49.3 kB\u001b[0m \u001b[31m1.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K     \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m99.8/99.8 kB\u001b[0m \u001b[31m2.4 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m638.7/638.7 kB\u001b[0m \u001b[31m9.8 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m67.1/67.1 kB\u001b[0m \u001b[31m7.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m72.5/72.5 kB\u001b[0m \u001b[31m8.2 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m141.7/141.7 kB\u001b[0m \u001b[31m16.5 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m9.1/9.1 MB\u001b[0m \u001b[31m67.9 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m6.9/6.9 MB\u001b[0m \u001b[31m84.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m469.4/469.4 kB\u001b[0m \u001b[31m43.1 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m43.8/43.8 kB\u001b[0m \u001b[31m4.5 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m140.6/140.6 kB\u001b[0m \u001b[31m16.0 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m334.3/334.3 kB\u001b[0m \u001b[31m30.4 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m633.8/633.8 kB\u001b[0m \u001b[31m49.0 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m69.0/69.0 kB\u001b[0m \u001b[31m7.5 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m142.4/142.4 kB\u001b[0m \u001b[31m13.7 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m308.9/308.9 kB\u001b[0m \u001b[31m29.0 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m754.9/754.9 kB\u001b[0m \u001b[31m45.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m1.1/1.1 MB\u001b[0m \u001b[31m71.5 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m40.9/40.9 kB\u001b[0m \u001b[31m3.8 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m12.4/12.4 MB\u001b[0m \u001b[31m78.9 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m251.4/251.4 kB\u001b[0m \u001b[31m22.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m66.5/66.5 kB\u001b[0m \u001b[31m7.1 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m14.7/14.7 MB\u001b[0m \u001b[31m67.6 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m204.3/204.3 kB\u001b[0m \u001b[31m21.4 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m3.5/3.5 MB\u001b[0m \u001b[31m115.0 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m123.4/123.4 kB\u001b[0m \u001b[31m13.2 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m96.4/96.4 kB\u001b[0m \u001b[31m10.0 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m72.5/72.5 kB\u001b[0m \u001b[31m7.6 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m220.0/220.0 kB\u001b[0m \u001b[31m21.2 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m66.4/66.4 kB\u001b[0m \u001b[31m7.2 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m132.6/132.6 kB\u001b[0m \u001b[31m15.5 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m152.3/152.3 kB\u001b[0m \u001b[31m1.8 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m86.8/86.8 kB\u001b[0m \u001b[31m9.0 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m78.0/78.0 kB\u001b[0m \u001b[31m8.5 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m88.0/88.0 kB\u001b[0m \u001b[31m8.1 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m80.2/80.2 kB\u001b[0m \u001b[31m8.9 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m331.1/331.1 kB\u001b[0m \u001b[31m30.9 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[?25h\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n",
+            "google-adk 1.27.1 requires opentelemetry-api<1.39.0,>=1.36.0, but you have opentelemetry-api 1.39.1 which is incompatible.\n",
+            "google-adk 1.27.1 requires opentelemetry-sdk<1.39.0,>=1.36.0, but you have opentelemetry-sdk 1.39.1 which is incompatible.\n",
+            "opentelemetry-exporter-gcp-logging 1.11.0a0 requires opentelemetry-sdk<1.39.0,>=1.35.0, but you have opentelemetry-sdk 1.39.1 which is incompatible.\u001b[0m\u001b[31m\n",
+            "\u001b[0m"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "from google.colab import userdata\n",
+        "\n",
+        "os.environ[\"GROQ_API_KEY\"] = userdata.get(\"GROQ_API_KEY\")\n",
+        "print(\"✅ Groq API key loaded!\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "UNc0fRO32WD5",
+        "outputId": "23a329b2-5c5a-4f9b-ec59-b766d5e3c788"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "✅ Groq API key loaded!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "\n",
+        "os.makedirs('/content/vscode_agent_app', exist_ok=True)\n",
+        "os.chdir('/content/vscode_agent_app')\n",
+        "print(f\"✅ Working directory: {os.getcwd()}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KO4LvAUj2t4m",
+        "outputId": "54b32d2c-5d5e-4fdf-e3ad-40a9dddc0151"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "✅ Working directory: /content/vscode_agent_app\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile ingest.py\n",
+        "\n",
+        "import io\n",
+        "import re\n",
+        "import zipfile\n",
+        "import requests\n",
+        "import frontmatter\n",
+        "from minsearch import Index\n",
+        "\n",
+        "\n",
+        "def read_repo_data(repo_owner, repo_name):\n",
+        "    \"\"\"Download and parse all .md/.mdx files from a GitHub repo.\"\"\"\n",
+        "    url = f'https://codeload.github.com/{repo_owner}/{repo_name}/zip/refs/heads/main'\n",
+        "    print(f'Downloading {repo_owner}/{repo_name}...')\n",
+        "    resp = requests.get(url)\n",
+        "\n",
+        "    if resp.status_code != 200:\n",
+        "        raise Exception(f'Failed to download: HTTP {resp.status_code}')\n",
+        "\n",
+        "    repository_data = []\n",
+        "    zf = zipfile.ZipFile(io.BytesIO(resp.content))\n",
+        "\n",
+        "    for file_info in zf.infolist():\n",
+        "        filename = file_info.filename.lower()\n",
+        "        if not (filename.endswith('.md') or filename.endswith('.mdx')):\n",
+        "            continue\n",
+        "        try:\n",
+        "            with zf.open(file_info) as f_in:\n",
+        "                content = f_in.read().decode('utf-8', errors='ignore')\n",
+        "                post = frontmatter.loads(content)\n",
+        "                data = post.to_dict()\n",
+        "                _, filename_repo = file_info.filename.split('/', maxsplit=1)\n",
+        "                data['filename'] = filename_repo\n",
+        "                repository_data.append(data)\n",
+        "        except Exception as e:\n",
+        "            continue\n",
+        "\n",
+        "    zf.close()\n",
+        "    print(f'Done. {len(repository_data)} files loaded.')\n",
+        "    return repository_data\n",
+        "\n",
+        "\n",
+        "def split_markdown_by_level(text, level=2):\n",
+        "    \"\"\"Split markdown text by header level.\"\"\"\n",
+        "    header_pattern = r'^(#{' + str(level) + r'} )(.+)$'\n",
+        "    pattern = re.compile(header_pattern, re.MULTILINE)\n",
+        "    parts = pattern.split(text)\n",
+        "\n",
+        "    sections = []\n",
+        "    for i in range(1, len(parts), 3):\n",
+        "        header = (parts[i] + parts[i + 1]).strip()\n",
+        "        content = parts[i + 2].strip() if i + 2 < len(parts) else ''\n",
+        "        section = f'{header}\\n\\n{content}' if content else header\n",
+        "        sections.append(section)\n",
+        "\n",
+        "    return sections\n",
+        "\n",
+        "\n",
+        "def chunk_documents(docs):\n",
+        "    \"\"\"Split documents into section-based chunks.\"\"\"\n",
+        "    chunks = []\n",
+        "    for doc in docs:\n",
+        "        doc_copy = doc.copy()\n",
+        "        doc_content = doc_copy.pop('content')\n",
+        "        sections = split_markdown_by_level(doc_content, level=2)\n",
+        "\n",
+        "        if not sections:\n",
+        "            doc_copy['section'] = doc_content.strip()\n",
+        "            chunks.append(doc_copy)\n",
+        "        else:\n",
+        "            for section in sections:\n",
+        "                section_doc = doc_copy.copy()\n",
+        "                section_doc['section'] = section\n",
+        "                chunks.append(section_doc)\n",
+        "\n",
+        "    return chunks\n",
+        "\n",
+        "\n",
+        "def index_data(repo_owner, repo_name):\n",
+        "    \"\"\"Download, chunk, and index a GitHub repo's docs.\"\"\"\n",
+        "    docs = read_repo_data(repo_owner, repo_name)\n",
+        "\n",
+        "    # Filter out empty docs\n",
+        "    docs = [d for d in docs if len(str(d.get('content', ''))) > 100]\n",
+        "\n",
+        "    # Chunk by markdown sections\n",
+        "    chunks = chunk_documents(docs)\n",
+        "\n",
+        "    # Build text index\n",
+        "    index = Index(\n",
+        "        text_fields=['section', 'title', 'filename'],\n",
+        "        keyword_fields=[]\n",
+        "    )\n",
+        "    index.fit(chunks)\n",
+        "\n",
+        "    print(f'Indexed {len(chunks)} chunks from {len(docs)} documents.')\n",
+        "    return index, chunks"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Km-Ruvyx2w0a",
+        "outputId": "76a17488-4ea1-4574-8da5-15dfa04036c7"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Writing ingest.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile search_tools.py\n",
+        "\n",
+        "from typing import List, Any\n",
+        "\n",
+        "\n",
+        "class SearchTool:\n",
+        "    def __init__(self, index):\n",
+        "        self.index = index\n",
+        "\n",
+        "    def search(self, query: str) -> List[Any]:\n",
+        "        \"\"\"\n",
+        "        Search the VS Code documentation for relevant sections.\n",
+        "\n",
+        "        Args:\n",
+        "            query: The search query string.\n",
+        "\n",
+        "        Returns:\n",
+        "            A list of up to 5 matching documentation sections.\n",
+        "        \"\"\"\n",
+        "        return self.index.search(query, num_results=5)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ovpEVEoe20CY",
+        "outputId": "e6a2852a-9d4c-43e6-8186-6d7bdae86cfc"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Writing search_tools.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile /content/vscode_agent_app/search_agent.py\n",
+        "\n",
+        "import search_tools\n",
+        "from pydantic_ai import Agent\n",
+        "\n",
+        "\n",
+        "SYSTEM_PROMPT_TEMPLATE = \"\"\"\n",
+        "You are a helpful assistant that answers questions about VS Code documentation.\n",
+        "\n",
+        "CRITICAL RULES:\n",
+        "- You MUST use the search tool before answering. Never skip searching.\n",
+        "- NEVER output raw function calls, XML tags, or code-like syntax in your response.\n",
+        "- After searching, write a clear, helpful answer in plain language.\n",
+        "- Cite the source document title when possible.\n",
+        "- If nothing relevant is found, say so honestly.\n",
+        "- Your response must ALWAYS be a normal text answer that a human can read.\n",
+        "- DO NOT respond with anything that looks like <function> tags or JSON.\n",
+        "\"\"\"\n",
+        "\n",
+        "\n",
+        "def init_agent(index, repo_owner, repo_name):\n",
+        "    search_tool = search_tools.SearchTool(index=index)\n",
+        "\n",
+        "    agent = Agent(\n",
+        "        name=\"vscode_docs_agent\",\n",
+        "        instructions=SYSTEM_PROMPT_TEMPLATE,\n",
+        "        tools=[search_tool.search],\n",
+        "        model='groq:llama-3.3-70b-versatile'\n",
+        "    )\n",
+        "\n",
+        "    return agent"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9EVwN9y625DA",
+        "outputId": "af703bab-2f48-4905-ac59-b2be695ac4fe"
+      },
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Overwriting /content/vscode_agent_app/search_agent.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile logs.py\n",
+        "\n",
+        "import os\n",
+        "import json\n",
+        "import secrets\n",
+        "from pathlib import Path\n",
+        "from datetime import datetime\n",
+        "from pydantic_ai.messages import ModelMessagesTypeAdapter\n",
+        "\n",
+        "\n",
+        "LOG_DIR = Path(os.getenv('LOGS_DIRECTORY', 'logs'))\n",
+        "LOG_DIR.mkdir(exist_ok=True)\n",
+        "\n",
+        "\n",
+        "def log_entry(agent, messages, source=\"user\"):\n",
+        "    tools = []\n",
+        "    for ts in agent.toolsets:\n",
+        "        tools.extend(ts.tools.keys())\n",
+        "\n",
+        "    dict_messages = ModelMessagesTypeAdapter.dump_python(messages)\n",
+        "\n",
+        "    return {\n",
+        "        \"agent_name\": agent.name,\n",
+        "        \"system_prompt\": agent._instructions,\n",
+        "        \"model\": \"groq:llama-3.3-70b-versatile\",\n",
+        "        \"tools\": tools,\n",
+        "        \"messages\": dict_messages,\n",
+        "        \"source\": source\n",
+        "    }\n",
+        "\n",
+        "\n",
+        "def serializer(obj):\n",
+        "    if isinstance(obj, datetime):\n",
+        "        return obj.isoformat()\n",
+        "    raise TypeError(f\"Type {type(obj)} not serializable\")\n",
+        "\n",
+        "\n",
+        "def log_interaction_to_file(agent, messages, source='user'):\n",
+        "    entry = log_entry(agent, messages, source)\n",
+        "\n",
+        "    try:\n",
+        "        ts = entry['messages'][-1]['timestamp']\n",
+        "        if isinstance(ts, datetime):\n",
+        "            ts_obj = ts\n",
+        "        elif isinstance(ts, str):\n",
+        "            ts_obj = datetime.fromisoformat(ts.replace(\"Z\", \"+00:00\"))\n",
+        "        else:\n",
+        "            ts_obj = datetime.now()\n",
+        "    except (KeyError, IndexError):\n",
+        "        ts_obj = datetime.now()\n",
+        "\n",
+        "    ts_str = ts_obj.strftime(\"%Y%m%d_%H%M%S\")\n",
+        "    rand_hex = secrets.token_hex(3)\n",
+        "\n",
+        "    filename = f\"{agent.name}_{ts_str}_{rand_hex}.json\"\n",
+        "    filepath = LOG_DIR / filename\n",
+        "\n",
+        "    with filepath.open(\"w\", encoding=\"utf-8\") as f_out:\n",
+        "        json.dump(entry, f_out, indent=2, default=serializer)\n",
+        "\n",
+        "    return filepath"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RgcWdjhO27x9",
+        "outputId": "be76ec15-c4d6-48cc-a342-901ec2f98344"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Writing logs.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile /content/vscode_agent_app/app.py\n",
+        "\n",
+        "import streamlit as st\n",
+        "import asyncio\n",
+        "import json\n",
+        "from groq import Groq\n",
+        "import ingest\n",
+        "\n",
+        "# --- Page config ---\n",
+        "st.set_page_config(page_title=\"VS Code Docs AI Assistant\", page_icon=\"🤖\", layout=\"centered\")\n",
+        "\n",
+        "# --- Initialize (cached) ---\n",
+        "@st.cache_resource\n",
+        "def init_app():\n",
+        "    repo_owner = \"microsoft\"\n",
+        "    repo_name = \"vscode-docs\"\n",
+        "    with st.spinner(\"📥 Downloading and indexing VS Code docs...\"):\n",
+        "        index, chunks = ingest.index_data(repo_owner, repo_name)\n",
+        "    client = Groq()\n",
+        "    return index, client, len(chunks)\n",
+        "\n",
+        "index, client, num_chunks = init_app()\n",
+        "\n",
+        "SYSTEM_PROMPT = \"\"\"You are a helpful VS Code documentation assistant.\n",
+        "\n",
+        "Answer the user's question based ONLY on the search results provided below.\n",
+        "- Give a clear, well-structured answer.\n",
+        "- Cite the source document title when relevant.\n",
+        "- If the search results don't cover the question, say so honestly.\n",
+        "- Never make up information that isn't in the search results.\n",
+        "\"\"\"\n",
+        "\n",
+        "def search_and_answer(question):\n",
+        "    \"\"\"Search docs, then ask LLM to answer based on results.\"\"\"\n",
+        "    # Step 1: Search (we do this ourselves — no tool calling needed)\n",
+        "    results = index.search(question, num_results=5)\n",
+        "\n",
+        "    # Step 2: Format search results as context\n",
+        "    context_parts = []\n",
+        "    for i, r in enumerate(results):\n",
+        "        title = r.get('title', 'Untitled')\n",
+        "        filename = r.get('filename', '')\n",
+        "        section = r.get('section', r.get('content', ''))[:800]\n",
+        "        context_parts.append(f\"[{i+1}] Title: {title} | File: {filename}\\n{section}\")\n",
+        "\n",
+        "    context = \"\\n\\n---\\n\\n\".join(context_parts)\n",
+        "\n",
+        "    # Step 3: Send to LLM with context\n",
+        "    user_message = f\"\"\"SEARCH RESULTS:\n",
+        "{context}\n",
+        "\n",
+        "USER QUESTION: {question}\n",
+        "\n",
+        "Please answer based on the search results above.\"\"\"\n",
+        "\n",
+        "    response = client.chat.completions.create(\n",
+        "        model=\"llama-3.3-70b-versatile\",\n",
+        "        messages=[\n",
+        "            {\"role\": \"system\", \"content\": SYSTEM_PROMPT},\n",
+        "            {\"role\": \"user\", \"content\": user_message}\n",
+        "        ],\n",
+        "        max_tokens=1000,\n",
+        "    )\n",
+        "\n",
+        "    return response.choices[0].message.content\n",
+        "\n",
+        "\n",
+        "# --- UI ---\n",
+        "st.title(\"🤖 VS Code Docs Assistant\")\n",
+        "st.caption(f\"Ask me anything about VS Code! Searching {num_chunks} indexed doc sections.\")\n",
+        "\n",
+        "if \"messages\" not in st.session_state:\n",
+        "    st.session_state.messages = []\n",
+        "\n",
+        "for msg in st.session_state.messages:\n",
+        "    with st.chat_message(msg[\"role\"]):\n",
+        "        st.markdown(msg[\"content\"])\n",
+        "\n",
+        "if prompt := st.chat_input(\"Ask about VS Code...\"):\n",
+        "    st.session_state.messages.append({\"role\": \"user\", \"content\": prompt})\n",
+        "    with st.chat_message(\"user\"):\n",
+        "        st.markdown(prompt)\n",
+        "\n",
+        "    with st.chat_message(\"assistant\"):\n",
+        "        with st.spinner(\"🔍 Searching docs and thinking...\"):\n",
+        "            try:\n",
+        "                answer = search_and_answer(prompt)\n",
+        "                st.markdown(answer)\n",
+        "            except Exception as e:\n",
+        "                answer = f\"⚠️ Error: {str(e)[:200]}. Please try again in a moment.\"\n",
+        "                st.error(answer)\n",
+        "\n",
+        "    st.session_state.messages.append({\"role\": \"assistant\", \"content\": answer})"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Pn7249vc2-hB",
+        "outputId": "24f1c568-0027-40d0-e867-9b8bc8f5794e"
+      },
+      "execution_count": 25,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Overwriting /content/vscode_agent_app/app.py\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "%%writefile requirements.txt\n",
+        "requests\n",
+        "python-frontmatter\n",
+        "minsearch\n",
+        "pydantic-ai\n",
+        "groq\n",
+        "streamlit"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1M5UV5oG3A7w",
+        "outputId": "6a40e3ed-d6cd-4417-b5a7-2bde1edc9a62"
+      },
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Writing requirements.txt\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import sys\n",
+        "sys.path.insert(0, '/content/vscode_agent_app')\n",
+        "\n",
+        "import ingest\n",
+        "import search_tools\n",
+        "import search_agent\n",
+        "import logs\n",
+        "\n",
+        "print(\"✅ All modules import successfully!\")\n",
+        "print()\n",
+        "print(\"Project files:\")\n",
+        "!ls -la /content/vscode_agent_app/"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FoSEehGI3DaT",
+        "outputId": "1e6915a3-f507-4279-e16b-fbebfbcbe3a4"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "✅ All modules import successfully!\n",
+            "\n",
+            "Project files:\n",
+            "total 40\n",
+            "drwxr-xr-x 4 root root 4096 Mar 28 14:32 .\n",
+            "drwxr-xr-x 1 root root 4096 Mar 28 14:31 ..\n",
+            "-rw-r--r-- 1 root root 2109 Mar 28 14:32 app.py\n",
+            "-rw-r--r-- 1 root root 2960 Mar 28 14:31 ingest.py\n",
+            "drwxr-xr-x 2 root root 4096 Mar 28 14:32 logs\n",
+            "-rw-r--r-- 1 root root 1578 Mar 28 14:32 logs.py\n",
+            "drwxr-xr-x 2 root root 4096 Mar 28 14:32 __pycache__\n",
+            "-rw-r--r-- 1 root root   65 Mar 28 14:32 requirements.txt\n",
+            "-rw-r--r-- 1 root root 1172 Mar 28 14:31 search_agent.py\n",
+            "-rw-r--r-- 1 root root  439 Mar 28 14:31 search_tools.py\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "/usr/local/lib/python3.12/dist-packages/jupyter_client/session.py:203: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n",
+            "  return datetime.utcnow().replace(tzinfo=utc)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Install colab-xterm for a simpler approach\n",
+        "!pip install colab-xterm -q\n",
+        "\n",
+        "# First, start Streamlit in the background\n",
+        "import subprocess\n",
+        "\n",
+        "streamlit_process = subprocess.Popen(\n",
+        "    ['streamlit', 'run', 'app.py',\n",
+        "     '--server.port', '8501',\n",
+        "     '--server.headless', 'true',\n",
+        "     '--server.address', '0.0.0.0',\n",
+        "     '--browser.gatherUsageStats', 'false'],\n",
+        "    cwd='/content/vscode_agent_app'\n",
+        ")\n",
+        "\n",
+        "import time\n",
+        "time.sleep(5)\n",
+        "\n",
+        "# Use Colab's built-in proxy\n",
+        "from google.colab import output\n",
+        "output.serve_kernel_port_as_window(8501)\n",
+        "print(\"👆 Click the link above to open your app!\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 158
+        },
+        "id": "wLE-XQur3KlJ",
+        "outputId": "b250de15-d832-4b54-d09c-dfcc88ecb48b"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\u001b[?25l   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m0.0/115.6 kB\u001b[0m \u001b[31m?\u001b[0m eta \u001b[36m-:--:--\u001b[0m\r\u001b[2K   \u001b[91m━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m\u001b[91m╸\u001b[0m\u001b[90m━━━━━━━━━━━━━━━\u001b[0m \u001b[32m71.7/115.6 kB\u001b[0m \u001b[31m2.2 MB/s\u001b[0m eta \u001b[36m0:00:01\u001b[0m\r\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m115.6/115.6 kB\u001b[0m \u001b[31m1.8 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n",
+            "\u001b[?25h\u001b[31mWarning: This function may stop working due to changes in browser security.\n",
+            "Try `serve_kernel_port_as_iframe` instead. \u001b[0m\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "/usr/local/lib/python3.12/dist-packages/jupyter_client/session.py:203: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n",
+            "  return datetime.utcnow().replace(tzinfo=utc)\n"
+          ]
+        },
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<IPython.core.display.Javascript object>"
+            ],
+            "application/javascript": [
+              "(async (port, path, text, element) => {\n",
+              "    if (!google.colab.kernel.accessAllowed) {\n",
+              "      return;\n",
+              "    }\n",
+              "    element.appendChild(document.createTextNode(''));\n",
+              "    const url = await google.colab.kernel.proxyPort(port);\n",
+              "    const anchor = document.createElement('a');\n",
+              "    anchor.href = new URL(path, url).toString();\n",
+              "    anchor.target = '_blank';\n",
+              "    anchor.setAttribute('data-href', url + path);\n",
+              "    anchor.textContent = text;\n",
+              "    element.appendChild(anchor);\n",
+              "  })(8501, \"/\", \"https://localhost:8501/\", window.element)"
+            ]
+          },
+          "metadata": {}
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "👆 Click the link above to open your app!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!curl -s http://localhost:8501 | head -20"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ip8eIrLp5oq9",
+        "outputId": "7b4a4f18-4762-4707-aa3a-6ff4dde7cc02"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<!--\n",
+            " Copyright (c) Streamlit Inc. (2018-2022) Snowflake Inc. (2022-2026)\n",
+            "\n",
+            " Licensed under the Apache License, Version 2.0 (the \"License\");\n",
+            " you may not use this file except in compliance with the License.\n",
+            " You may obtain a copy of the License at\n",
+            "\n",
+            "     http://www.apache.org/licenses/LICENSE-2.0\n",
+            "\n",
+            " Unless required by applicable law or agreed to in writing, software\n",
+            " distributed under the License is distributed on an \"AS IS\" BASIS,\n",
+            " WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n",
+            " See the License for the specific language governing permissions and\n",
+            " limitations under the License.\n",
+            "-->\n",
+            "\n",
+            "<!DOCTYPE html>\n",
+            "<html lang=\"en\">\n",
+            "  <head>\n",
+            "    <meta charset=\"UTF-8\" />\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!cat /content/vscode_agent_app/logs/*.json 2>/dev/null || echo \"No logs yet\"\n",
+        "!ps aux | grep streamlit"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "PIQ0BExI5rgE",
+        "outputId": "c99e327b-6018-43de-8319-e18738f27807"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "No logs yet\n",
+            "root        6671  1.4  0.5 534896 77368 ?        Sl   14:40   0:02 /usr/bin/python3 /usr/local/bin/streamlit run app.py --server.port 8501 --server.headless true --server.address 0.0.0.0 --browser.gatherUsageStats false\n",
+            "root        7515  0.0  0.0   7372  3448 ?        S    14:44   0:00 /bin/bash -c ps aux | grep streamlit\n",
+            "root        7517  0.0  0.0   6480  2548 ?        S    14:44   0:00 grep streamlit\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!curl -s http://localhost:8501 | head -5"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Uiad4i7q5vQo",
+        "outputId": "f21e64f3-bf7d-4b7c-c852-207a112183eb"
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<!--\n",
+            " Copyright (c) Streamlit Inc. (2018-2022) Snowflake Inc. (2022-2026)\n",
+            "\n",
+            " Licensed under the Apache License, Version 2.0 (the \"License\");\n",
+            " you may not use this file except in compliance with the License.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!curl -s http://localhost:8501/_stcore/health"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fTexZI0o56LC",
+        "outputId": "5b5ffd58-e7d8-42e0-9756-93cb4a678c15"
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "ok"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import IPython\n",
+        "IPython.display.display(IPython.display.IFrame('https://localhost:8501', width='100%', height=700))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 722
+        },
+        "id": "RYrv0h6558BR",
+        "outputId": "97bab728-a254-406b-dfe4-77db7a2a627f"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "display_data",
+          "data": {
+            "text/plain": [
+              "<IPython.lib.display.IFrame at 0x7b416d86c080>"
+            ],
+            "text/html": [
+              "\n",
+              "        <iframe\n",
+              "            width=\"100%\"\n",
+              "            height=\"700\"\n",
+              "            src=\"https://localhost:8501\"\n",
+              "            frameborder=\"0\"\n",
+              "            allowfullscreen\n",
+              "            \n",
+              "        ></iframe>\n",
+              "        "
+            ]
+          },
+          "metadata": {}
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "!pip install pyngrok -q\n",
+        "from pyngrok import ngrok\n",
+        "\n",
+        "# Create a tunnel\n",
+        "public_url = ngrok.connect(8501)\n",
+        "print(f\"🚀 Your app is live at: {public_url}\")\n",
+        "print(\"Open this URL in a new browser tab!\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 463
+        },
+        "id": "8eov18xk59s5",
+        "outputId": "7458f908-414a-437f-8d89-99784220949a"
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": []
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "ERROR:pyngrok.process.ngrok:t=2026-03-28T14:46:03+0000 lvl=eror msg=\"failed to reconnect session\" obj=tunnels.session err=\"authentication failed: Usage of ngrok requires a verified account and authtoken.\\n\\nSign up for an account: https://dashboard.ngrok.com/signup\\nInstall your authtoken: https://dashboard.ngrok.com/get-started/your-authtoken\\r\\n\\r\\nERR_NGROK_4018\\r\\n\"\n",
+            "ERROR:pyngrok.process.ngrok:t=2026-03-28T14:46:03+0000 lvl=eror msg=\"session closing\" obj=tunnels.session err=\"authentication failed: Usage of ngrok requires a verified account and authtoken.\\n\\nSign up for an account: https://dashboard.ngrok.com/signup\\nInstall your authtoken: https://dashboard.ngrok.com/get-started/your-authtoken\\r\\n\\r\\nERR_NGROK_4018\\r\\n\"\n",
+            "ERROR:pyngrok.process.ngrok:t=2026-03-28T14:46:03+0000 lvl=eror msg=\"terminating with error\" obj=app err=\"authentication failed: Usage of ngrok requires a verified account and authtoken.\\n\\nSign up for an account: https://dashboard.ngrok.com/signup\\nInstall your authtoken: https://dashboard.ngrok.com/get-started/your-authtoken\\r\\n\\r\\nERR_NGROK_4018\\r\\n\"\n",
+            "CRITICAL:pyngrok.process.ngrok:t=2026-03-28T14:46:03+0000 lvl=crit msg=\"command failed\" err=\"authentication failed: Usage of ngrok requires a verified account and authtoken.\\n\\nSign up for an account: https://dashboard.ngrok.com/signup\\nInstall your authtoken: https://dashboard.ngrok.com/get-started/your-authtoken\\r\\n\\r\\nERR_NGROK_4018\\r\\n\"\n"
+          ]
+        },
+        {
+          "output_type": "error",
+          "ename": "PyngrokNgrokError",
+          "evalue": "The ngrok process errored on start: authentication failed: Usage of ngrok requires a verified account and authtoken.\\n\\nSign up for an account: https://dashboard.ngrok.com/signup\\nInstall your authtoken: https://dashboard.ngrok.com/get-started/your-authtoken\\r\\n\\r\\nERR_NGROK_4018\\r\\n.",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mPyngrokNgrokError\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_3796/2793021495.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      3\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0;31m# Create a tunnel\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 5\u001b[0;31m \u001b[0mpublic_url\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mngrok\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mconnect\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;36m8501\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      6\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34mf\"🚀 Your app is live at: {public_url}\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      7\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Open this URL in a new browser tab!\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/pyngrok/ngrok.py\u001b[0m in \u001b[0;36mconnect\u001b[0;34m(addr, proto, name, pyngrok_config, **options)\u001b[0m\n\u001b[1;32m    333\u001b[0m     \u001b[0mlogger\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0minfo\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34mf\"Opening tunnel named: {name}\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    334\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 335\u001b[0;31m     \u001b[0mapi_url\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mget_ngrok_process\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mpyngrok_config\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mapi_url\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    336\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    337\u001b[0m     \u001b[0mlogger\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mdebug\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34mf\"Creating tunnel with options: {options}\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/pyngrok/ngrok.py\u001b[0m in \u001b[0;36mget_ngrok_process\u001b[0;34m(pyngrok_config)\u001b[0m\n\u001b[1;32m    200\u001b[0m     \u001b[0minstall_ngrok\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mpyngrok_config\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    201\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 202\u001b[0;31m     \u001b[0;32mreturn\u001b[0m \u001b[0mprocess\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_process\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mpyngrok_config\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    203\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    204\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/pyngrok/process.py\u001b[0m in \u001b[0;36mget_process\u001b[0;34m(pyngrok_config)\u001b[0m\n\u001b[1;32m    269\u001b[0m         \u001b[0;32mreturn\u001b[0m \u001b[0m_current_processes\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mpyngrok_config\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mngrok_path\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    270\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 271\u001b[0;31m     \u001b[0;32mreturn\u001b[0m \u001b[0m_start_process\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mpyngrok_config\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    272\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    273\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/pyngrok/process.py\u001b[0m in \u001b[0;36m_start_process\u001b[0;34m(pyngrok_config)\u001b[0m\n\u001b[1;32m    445\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    446\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mngrok_process\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mstartup_error\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mnot\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 447\u001b[0;31m             raise PyngrokNgrokError(f\"The ngrok process errored on start: {ngrok_process.startup_error}.\",\n\u001b[0m\u001b[1;32m    448\u001b[0m                                     \u001b[0mngrok_process\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlogs\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    449\u001b[0m                                     ngrok_process.startup_error)\n",
+            "\u001b[0;31mPyngrokNgrokError\u001b[0m: The ngrok process errored on start: authentication failed: Usage of ngrok requires a verified account and authtoken.\\n\\nSign up for an account: https://dashboard.ngrok.com/signup\\nInstall your authtoken: https://dashboard.ngrok.com/get-started/your-authtoken\\r\\n\\r\\nERR_NGROK_4018\\r\\n."
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from pyngrok import ngrok\n",
+        "\n",
+        "ngrok.set_auth_token(\"3BZv7LwRwS45bC4uRFxZmAIxwGN_7o6ihjcUs1FNNDKvNYY7E\")  # ← replace this\n",
+        "\n",
+        "public_url = ngrok.connect(8501)\n",
+        "print(f\"🚀 Your app is live at: {public_url}\")\n",
+        "print(\"Open this URL in a NEW browser tab!\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "MUgV1-FS6Im6",
+        "outputId": "18185306-3d50-4a14-d991-cbf07e1552f8"
+      },
+      "execution_count": 21,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "🚀 Your app is live at: NgrokTunnel: \"https://greasier-stewart-unpickled.ngrok-free.dev\" -> \"http://localhost:8501\"\n",
+            "Open this URL in a NEW browser tab!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"=== DAY 6 COMPLETE ===\")\n",
+        "print()\n",
+        "print(\"✅ Cleaned notebook code into 5 modular Python files:\")\n",
+        "print(\"   ingest.py       — download, chunk, index\")\n",
+        "print(\"   search_tools.py — search function class\")\n",
+        "print(\"   search_agent.py — Pydantic AI agent config\")\n",
+        "print(\"   logs.py         — interaction logging\")\n",
+        "print(\"   app.py          — Streamlit chat UI\")\n",
+        "print()\n",
+        "print(\"✅ Built a web chat interface with Streamlit\")\n",
+        "print(\"✅ Ran it from Colab with a public URL\")\n",
+        "print()\n",
+        "print(\"🔜 Day 7 — Final wrap-up and demo!\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Y3jOO7hQ62rk",
+        "outputId": "27205a79-114e-42b4-d706-0d1de6e8f2fd"
+      },
+      "execution_count": 22,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "=== DAY 6 COMPLETE ===\n",
+            "\n",
+            "✅ Cleaned notebook code into 5 modular Python files:\n",
+            "   ingest.py       — download, chunk, index\n",
+            "   search_tools.py — search function class\n",
+            "   search_agent.py — Pydantic AI agent config\n",
+            "   logs.py         — interaction logging\n",
+            "   app.py          — Streamlit chat UI\n",
+            "\n",
+            "✅ Built a web chat interface with Streamlit\n",
+            "✅ Ran it from Colab with a public URL\n",
+            "\n",
+            "🔜 Day 7 — Final wrap-up and demo!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import subprocess, time\n",
+        "\n",
+        "# Kill old Streamlit\n",
+        "!pkill -f streamlit\n",
+        "time.sleep(2)\n",
+        "\n",
+        "# Start fresh\n",
+        "subprocess.Popen(\n",
+        "    ['streamlit', 'run', 'app.py',\n",
+        "     '--server.port', '8501',\n",
+        "     '--server.headless', 'true',\n",
+        "     '--server.address', '0.0.0.0',\n",
+        "     '--browser.gatherUsageStats', 'false'],\n",
+        "    cwd='/content/vscode_agent_app'\n",
+        ")\n",
+        "\n",
+        "time.sleep(5)\n",
+        "\n",
+        "from pyngrok import ngrok\n",
+        "public_url = ngrok.connect(8501)\n",
+        "print(f\"🚀 Your app is live at: {public_url}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "M6AmKCBw79ku",
+        "outputId": "c3caa50f-111e-43ab-c17b-70a0ac625073"
+      },
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "WARNING:pyngrok.process.ngrok:t=2026-03-28T15:05:47+0000 lvl=warn msg=\"failed to open private leg\" id=b4db04ea83d3 privaddr=localhost:8501 err=\"dial tcp [::1]:8501: connect: connection refused\"\n",
+            "/usr/local/lib/python3.12/dist-packages/jupyter_client/session.py:203: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n",
+            "  return datetime.utcnow().replace(tzinfo=utc)\n",
+            "WARNING:pyngrok.process.ngrok:t=2026-03-28T15:05:47+0000 lvl=warn msg=\"failed to open private leg\" id=0916df053e77 privaddr=localhost:8501 err=\"dial tcp [::1]:8501: connect: connection refused\"\n",
+            "WARNING:pyngrok.process.ngrok:t=2026-03-28T15:05:49+0000 lvl=warn msg=\"failed to open private leg\" id=612e17824af9 privaddr=localhost:8501 err=\"dial tcp [::1]:8501: connect: connection refused\"\n",
+            "WARNING:pyngrok.process.ngrok:t=2026-03-28T15:05:49+0000 lvl=warn msg=\"failed to open private leg\" id=25209452a766 privaddr=localhost:8501 err=\"dial tcp [::1]:8501: connect: connection refused\"\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "🚀 Your app is live at: NgrokTunnel: \"https://greasier-stewart-unpickled.ngrok-free.dev\" -> \"http://localhost:8501\"\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import subprocess, time\n",
+        "\n",
+        "!pkill -f streamlit\n",
+        "!pkill -f ngrok\n",
+        "time.sleep(3)\n",
+        "\n",
+        "subprocess.Popen(\n",
+        "    ['streamlit', 'run', 'app.py',\n",
+        "     '--server.port', '8501',\n",
+        "     '--server.headless', 'true',\n",
+        "     '--server.address', '0.0.0.0',\n",
+        "     '--browser.gatherUsageStats', 'false'],\n",
+        "    cwd='/content/vscode_agent_app'\n",
+        ")\n",
+        "\n",
+        "time.sleep(5)\n",
+        "\n",
+        "from pyngrok import ngrok\n",
+        "public_url = ngrok.connect(8501)\n",
+        "print(f\"🚀 Your app is live at: {public_url}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "83ENkp4u-ruE",
+        "outputId": "24ac0fc7-ff75-4620-cad2-b6e4712a2c80"
+      },
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "🚀 Your app is live at: NgrokTunnel: \"https://greasier-stewart-unpickled.ngrok-free.dev\" -> \"http://localhost:8501\"\n"
+          ]
+        },
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": [
+            "/usr/local/lib/python3.12/dist-packages/jupyter_client/session.py:203: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n",
+            "  return datetime.utcnow().replace(tzinfo=utc)\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
       "source": [],
       "metadata": {
-        "id": "gsuu2ixCwZ9x"
+        "id": "gEdqHX2QBEQv"
       },
       "execution_count": null,
       "outputs": []
